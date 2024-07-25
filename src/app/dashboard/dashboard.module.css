@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.logo a {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a,
+.logoutButton {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.nav a:hover,
+.logoutButton:hover {
+  background-color: #e9ecef;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+.statsSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.statCard h3 {
+  margin-bottom: 0.5rem;
+}
+
+.statCard p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.recentPosts {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.postList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.postList li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.postList li:last-child {
+  border-bottom: none;
+}
+
+.postList a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.postList span {
+  display: block;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .statsSection {
+    flex-direction: column;
+  }
+
+  .statCard {
+    margin: 0 0 1rem 0;
+  }
+}

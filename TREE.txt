@@ -1,0 +1,11 @@
+src/app/
+├── page.js (Landing page)
+├── login/
+│   └── page.js
+├── signup/
+│   └── page.js
+├── dashboard/
+│   └── page.js
+└── blog/
+    └── [slug]/
+        └── page.js
