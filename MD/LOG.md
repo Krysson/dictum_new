@@ -12,3 +12,8 @@
   - date
   - commit number
   - Log
+
+### Commit #3
+
+- created branch `landingbottom` to work on the bottom of the landing page
+- static images and text added

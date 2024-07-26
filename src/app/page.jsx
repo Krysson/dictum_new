@@ -3,6 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Home() {
+  const cx = (...classNames) => classNames.join(' ')
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -34,7 +36,7 @@ export default function Home() {
             <span className={styles.arrow}>→</span>
           </Link>
         </div>
-
+        {/* START Section */}
         <div className={styles.features}>
           <h2>Start blogging in minutes</h2>
           <p>Sharing your legal insights has never been easier than with .dictum</p>
@@ -83,6 +85,68 @@ export default function Home() {
               <span className={styles.stepDescription}>Share your expertise with the world.</span>
             </li>
           </ol>
+        </div>
+        {/* advanced Feature Section */}
+        <div className={styles.advancedFeatures}>
+          <h2>Powerful Tools for Legal Bloggers</h2>
+          <div className={styles.featureList}>
+            <div className={`${styles.featureItem} ${styles.featureWYSIWYG}`}>
+              <div className={styles.featureText}>
+                <h3>WYSIWYG or Markdown Editors</h3>
+                <p>Choose your preferred writing style with our flexible editing options.</p>
+              </div>
+              <div className={styles.featureImage}>
+                <Image
+                  src='/imgs/robot.png'
+                  alt='WYSIWYG Editor'
+                  width={400}
+                  height={300}
+                />
+              </div>
+            </div>
+            <div className={`${styles.featureItem} ${styles.featureAI}`}>
+              <div className={styles.featureImage}>
+                <Image
+                  src='/imgs/robot.png'
+                  alt='AI Assisted Writing'
+                  width={400}
+                  height={300}
+                />
+              </div>
+              <div className={styles.featureText}>
+                <h3>AI Assisted Writing</h3>
+                <p>Enhance your content with our advanced AI writing assistance.</p>
+              </div>
+            </div>
+            <div className={`${styles.featureItem} ${styles.featureSubscriptions}`}>
+              <div className={styles.featureText}>
+                <h3>Email Subscriptions</h3>
+                <p>Let readers follow your blog and receive updates directly in their inbox.</p>
+              </div>
+              <div className={styles.featureImage}>
+                <Image
+                  src='/imgs/robot.png'
+                  alt='Email Subscriptions'
+                  width={400}
+                  height={300}
+                />
+              </div>
+            </div>
+            <div className={`${styles.featureItem} ${styles.featurePaid}`}>
+              <div className={styles.featureImage}>
+                <Image
+                  src='/imgs/robot.png'
+                  alt='Paid Subscriptions'
+                  width={400}
+                  height={300}
+                />
+              </div>
+              <div className={styles.featureText}>
+                <h3>Optional Paid Subscriptions</h3>
+                <p>Monetize your expertise with the option to charge for premium content.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
