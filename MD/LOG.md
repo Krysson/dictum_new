@@ -17,3 +17,8 @@
 
 - created branch `landingbottom` to work on the bottom of the landing page
 - static images and text added
+
+### Commit #4
+
+- adding animations
+  - animation works but is jummpy - commiting but need to smoth out - maybe come in from direction instead of just appear

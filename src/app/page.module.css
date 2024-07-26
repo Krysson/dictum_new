@@ -106,6 +106,20 @@
   font-size: 1.25rem;
 }
 
+/* Steps Animations */
+.stepAnimated {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stepAnimated.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Steps */
+
 .steps {
   list-style-type: none;
   padding: 0;
@@ -153,6 +167,27 @@
   background-color: #d96e2d;
   color: #e7e8e9;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/*Advanced Features Animation */
+.featureAnimated {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.featureAnimated.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.featureWYSIWYG .featureText,
+.featureSubscriptions .featureText {
+  transform: translateX(-50px);
+}
+
+.featureAI .featureText,
+.featurePaid .featureText {
+  transform: translateX(50px);
 }
 
 /*Advanced Features Section */

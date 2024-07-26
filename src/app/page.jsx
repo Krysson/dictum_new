@@ -1,8 +1,43 @@
+'use client'
 import styles from './page.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 
+// Custom hook for detecting if an element is in view
+function useInView(options) {
+  const [isInView, setIsInView] = useState(false)
+  const ref = useRef()
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsInView(entry.isIntersecting)
+    }, options)
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current)
+      }
+    }
+  }, [ref, options])
+
+  return [ref, isInView]
+}
+
+//main page below
 export default function Home() {
+  const [step1Ref, step1InView] = useInView({ threshold: 0.5 })
+  const [step2Ref, step2InView] = useInView({ threshold: 0.5 })
+  const [step3Ref, step3InView] = useInView({ threshold: 0.5 })
+  const [feature1Ref, feature1InView] = useInView({ threshold: 0.5 })
+  const [feature2Ref, feature2InView] = useInView({ threshold: 0.5 })
+  const [feature3Ref, feature3InView] = useInView({ threshold: 0.5 })
+  const [feature4Ref, feature4InView] = useInView({ threshold: 0.5 })
+
   const cx = (...classNames) => classNames.join(' ')
 
   return (
@@ -41,7 +76,10 @@ export default function Home() {
           <h2>Start blogging in minutes</h2>
           <p>Sharing your legal insights has never been easier than with .dictum</p>
           <ol className={styles.steps}>
-            <li>
+            {/* can edit classname below if needed to match syntax - taking out cx function */}
+            <li
+              ref={step1Ref}
+              className={cx(styles.stepAnimated, step1InView && styles.animate)}>
               <div className={styles.stepImage}>
                 <Image
                   src='/imgs/step-1.png'
@@ -56,7 +94,9 @@ export default function Home() {
                 Choose between our free plan or <Link href='/pricing'>pro plan</Link>.
               </span>
             </li>
-            <li>
+            <li
+              ref={step2Ref}
+              className={cx(styles.stepAnimated, step2InView && styles.animate)}>
               <div className={styles.stepImage}>
                 <Image
                   src='/imgs/step-2.png'
@@ -71,7 +111,9 @@ export default function Home() {
                 Customize your profile and blog settings.
               </span>
             </li>
-            <li>
+            <li
+              ref={step3Ref}
+              className={cx(styles.stepAnimated, step3InView && styles.animate)}>
               <div className={styles.stepImage}>
                 <Image
                   src='/imgs/step-3.png'
@@ -90,7 +132,14 @@ export default function Home() {
         <div className={styles.advancedFeatures}>
           <h2>Powerful Tools for Legal Bloggers</h2>
           <div className={styles.featureList}>
-            <div className={`${styles.featureItem} ${styles.featureWYSIWYG}`}>
+            <div
+              ref={feature1Ref}
+              className={cx(
+                styles.featureItem,
+                styles.featureWYSIWYG,
+                styles.featureAnimated,
+                feature1InView && styles.animate
+              )}>
               <div className={styles.featureText}>
                 <h3>WYSIWYG or Markdown Editors</h3>
                 <p>Choose your preferred writing style with our flexible editing options.</p>
@@ -104,7 +153,14 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className={`${styles.featureItem} ${styles.featureAI}`}>
+            <div
+              ref={feature2Ref}
+              className={cx(
+                styles.featureItem,
+                styles.featureAI,
+                styles.featureAnimated,
+                feature2InView && styles.animate
+              )}>
               <div className={styles.featureImage}>
                 <Image
                   src='/imgs/robot.png'
@@ -118,7 +174,14 @@ export default function Home() {
                 <p>Enhance your content with our advanced AI writing assistance.</p>
               </div>
             </div>
-            <div className={`${styles.featureItem} ${styles.featureSubscriptions}`}>
+            <div
+              ref={feature3Ref}
+              className={cx(
+                styles.featureItem,
+                styles.featureSubscriptions,
+                styles.featureAnimated,
+                feature3InView && styles.animate
+              )}>
               <div className={styles.featureText}>
                 <h3>Email Subscriptions</h3>
                 <p>Let readers follow your blog and receive updates directly in their inbox.</p>
@@ -132,7 +195,14 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className={`${styles.featureItem} ${styles.featurePaid}`}>
+            <div
+              ref={feature4Ref}
+              className={cx(
+                styles.featureItem,
+                styles.featurePaid,
+                styles.featureAnimated,
+                feature4InView && styles.animate
+              )}>
               <div className={styles.featureImage}>
                 <Image
                   src='/imgs/robot.png'
