@@ -3,6 +3,8 @@
   flex-direction: column;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #483f3a;
 }
 
 .header {
@@ -10,13 +12,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #f8f9fa;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.logo {
+.logo a {
   font-size: 2rem;
   font-weight: bold;
-  color: #007bff;
+  color: #333;
+  text-decoration: none;
 }
 
 .nav a {
@@ -27,42 +31,141 @@
 
 .main {
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 2rem;
 }
 
-.cta {
-  margin-top: 1rem;
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.announcement {
+  display: inline-block;
+  background-color: #ff654d;
+  color: #483f3a;
   padding: 0.5rem 1rem;
-  font-size: 1rem;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #d96e2d;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #9d8a68;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.cta {
+  display: inline-block;
+  background-color: #1b628c;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #3d84ae;
+}
+
+.arrow {
+  margin-left: 0.75rem;
+}
+
+.features {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center; /* to align the text in the center */
+}
+
+.features h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.features > p {
+  color: #483f3a;
+  margin-bottom: 2rem;
+  max-width: 600px; /* Limit the width for better readability */
+  margin-left: auto; /* Center the paragraph */
+  margin-right: auto;
+  font-size: 1.25rem;
+}
+
+.steps {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem; /* Add some space between the centered text and the steps */
+}
+
+.steps li {
+  flex-basis: 30%;
+  border-top: 2px solid #d96e2d;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stepImage {
+  margin-bottom: 1rem;
+}
+
+.stepNumber {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: bolder;
+  color: #1b628c;
+  margin-bottom: 0.5rem;
+}
+
+.stepTitle {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stepDescription {
+  color: #483f3a;
 }
 
 .footer {
-  padding: 1rem;
   text-align: center;
-  background-color: #f8f9fa;
+  padding: 1rem;
+  background-color: #d96e2d;
+  color: #e7e8e9;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
-  .header {
+  .steps {
     flex-direction: column;
-    padding: 1rem;
   }
 
-  .nav {
-    margin-top: 1rem;
+  .steps li {
+    margin-bottom: 2rem;
   }
 
-  .nav a {
-    margin: 0 0.5rem;
+  .stepImage img {
+    width: 150px;
+    height: 150px;
   }
 }
